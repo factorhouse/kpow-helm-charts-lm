@@ -1,0 +1,73 @@
+replicaCount: 1
+
+image:
+  repository: operatr/kpow
+  pullPolicy: IfNotPresent
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+env: {}
+# LICENSE_ID: "replace-me"
+# LICENSE_CODE: "replace-me"
+# LICENSEE: "replace-me"
+# LICENSE_EXPIRY: "replace-me"
+# LICENSE_SIGNATURE: "replace-me"
+# BOOTSTRAP: "replace-with-your-bootstrap-url"
+# RBAC_CONFIGURATION_FILE: /path/to/rbac-config.yaml
+envFromConfigMap: null
+envFromSecret: null
+volumeMounts: []
+# - name: rbac-config
+#   mountPath: /path/to/rbac-config.yaml
+#   subPath: rbac-config.yaml
+volumes: []
+# - name: rbac-config
+#   configMap:
+#     name: "my-kpow-config"
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: kpow
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  enabled: true
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: false
+  annotations: {}
+  hosts: []
+  tls: []
+
+# We recommend running kPow w/ Guaranteed QOS class and 1 CPU / 2G Memory.
+# Small resource sets (e.g. 1 cluster, 1 schema registry) can likely run with 0.5 CPU / 1G Memory or less.
+resources:
+  limits:
+    cpu: 1
+    memory: 2Gi
+  requests:
+    cpu: 1
+    memory: 2Gi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 1
+  targetCPUUtilizationPercentage: 85
+  targetMemoryUtilizationPercentage: 85
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
