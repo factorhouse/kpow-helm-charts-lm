@@ -39,15 +39,15 @@ spec:
             - name: {{ $key }}
               value: {{ $val }}
             {{- end }}
-            { { - if .Values.awsmp.licenseConfigSecretName } }
+            {{- if .Values.awsmp.licenseConfigSecretName }}
             - name: AWS_WEB_IDENTITY_REFRESH_TOKEN_FILE
               value: "/var/run/secrets/product-license/license_token"
             - name: AWS_ROLE_ARN
                 valueFrom:
                   secretKeyRef:
-                  name: { { .Values.aws.licenseConfigSecretName } }
+                  name: {{.Values.aws.licenseConfigSecretName }}
                   key: iam_role
-            { { - end } }
+            {{- end }}
           {{- end }}
           envFrom:
             {{- with .Values.envFromConfigMap }}
@@ -62,20 +62,16 @@ spec:
             - name: http
               containerPort: 3000
               protocol: TCP
-          { { - if .Values.awsmp.licenseConfigSecretName } }
-          //Mount the license volume to the container image
+          {{- if .Values.awsmp.licenseConfigSecretName }}
           volumeMounts:
             - name: awsmp-product-license
               mountPath: "/var/run/secrets/product-license"
-          //Add following environment variable to container for credential
-          provider
-          //Mount the license secret as a volume to the pod
           volumes:
             - name: awsmp-product-license
               secret:
-                secretName: { { .Values.aws.licenseConfigSecretName } }
+                secretName: {{ .Values.aws.licenseConfigSecretName }}
                 optional: true
-          { { - end } }
+          {{- end }}
           readinessProbe:
             httpGet:
               path: /up

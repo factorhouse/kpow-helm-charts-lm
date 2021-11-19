@@ -59,6 +59,9 @@ resources:
     cpu: 1
     memory: 2Gi
 
+awsmp:
+  licenseConfigSecretName: ""
+
 autoscaling:
   enabled: false
   minReplicas: 1
