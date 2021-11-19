@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: operatr/kpow
+  repository: 709825985650.dkr.ecr.us-east-1.amazonaws.com/operator-io/kpow-lm
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -28,7 +28,7 @@ volumes: []
 #     name: "my-kpow-config"
 
 serviceAccount:
-  create: true
+  create: false
   annotations: {}
   name: kpow
 
