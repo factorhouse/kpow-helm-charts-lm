@@ -39,13 +39,13 @@ spec:
             - name: {{ $key }}
               value: {{ $val }}
             {{- end }}
-            {{- if .Values.awsmp.licenseConfigSecretName }}
+            {{- if $.Values.aws.licenseConfigSecretName }}
             - name: AWS_WEB_IDENTITY_REFRESH_TOKEN_FILE
               value: "/var/run/secrets/product-license/license_token"
             - name: AWS_ROLE_ARN
                 valueFrom:
                   secretKeyRef:
-                  name: {{.Values.aws.licenseConfigSecretName }}
+                  name: {{ $.Values.aws.licenseConfigSecretName }}
                   key: iam_role
             {{- end }}
           {{- end }}
@@ -62,14 +62,14 @@ spec:
             - name: http
               containerPort: 3000
               protocol: TCP
-          {{- if .Values.awsmp.licenseConfigSecretName }}
+          {{- if $.Values.aws.licenseConfigSecretName }}
           volumeMounts:
             - name: awsmp-product-license
               mountPath: "/var/run/secrets/product-license"
           volumes:
             - name: awsmp-product-license
               secret:
-                secretName: {{ .Values.aws.licenseConfigSecretName }}
+                secretName: {{ $.Values.aws.licenseConfigSecretName }}
                 optional: true
           {{- end }}
           readinessProbe:
