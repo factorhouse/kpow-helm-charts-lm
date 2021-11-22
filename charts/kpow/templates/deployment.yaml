@@ -43,8 +43,8 @@ spec:
             - name: AWS_WEB_IDENTITY_REFRESH_TOKEN_FILE
               value: "/var/run/secrets/product-license/license_token"
             - name: AWS_ROLE_ARN
-                valueFrom:
-                  secretKeyRef:
+              valueFrom:
+                secretKeyRef:
                   name: {{ $.Values.aws.licenseConfigSecretName }}
                   key: iam_role
             {{- end }}
@@ -66,11 +66,6 @@ spec:
           volumeMounts:
             - name: awsmp-product-license
               mountPath: "/var/run/secrets/product-license"
-          volumes:
-            - name: awsmp-product-license
-              secret:
-                secretName: {{ $.Values.aws.licenseConfigSecretName }}
-                optional: true
           {{- end }}
           readinessProbe:
             httpGet:
@@ -86,6 +81,16 @@ spec:
             periodSeconds: 30
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        {{- with .Values.volumes }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+        {{- if $.Values.aws.licenseConfigSecretName }}
+        - name: awsmp-product-license
+          secret:
+            secretName: {{ $.Values.aws.licenseConfigSecretName }}
+            optional: true
+        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -96,9 +101,5 @@ spec:
       {{- end }}
       {{- with .Values.tolerations }}
       tolerations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.volumes }}
-      volumes:
         {{- toYaml . | nindent 8 }}
       {{- end }}
