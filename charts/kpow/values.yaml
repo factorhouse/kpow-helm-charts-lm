@@ -52,8 +52,8 @@ resources:
     cpu: 1
     memory: 2Gi
 
-awsmp:
-  licenseConfigSecretName: ""
+#awsmp:
+ # licenseConfigSecretName: ""
 
 autoscaling:
   enabled: false
