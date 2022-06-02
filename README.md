@@ -1,4 +1,4 @@
-# Run kPow for Apache Kafka in Kubernetes with AWS License Manager
+## Run kPow for Apache Kafka in Kubernetes with AWS License Manager
 
 [Helm](https://helm.sh) is the package manager for Kubernetes.
 
@@ -8,11 +8,11 @@ This Helm chart is applicable only to the **AWS License Manager** version of Kpo
 
 Find our general-purpose Helm charts for regular Kubernetes deploys [right here](https://github.com/operatr-io/kpow-helm-charts).
 
-# Helm Charts
+## Helm Charts
 
 This repository contains a single Helm chart that uses the Kpow AWS Marketplace LM Docker container provided to you when you subscribe to the Kpow AWS Marketplace LM product on the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-vgghgqdsplhvc).
 
-## Installation
+### Installation
 
 Follow the instructions provided to you via your AWS Marketplace subscription.
 
