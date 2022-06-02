@@ -4,7 +4,7 @@
 
 [kPow](https://kpow.io) is the all-in-one toolkit to manage, monitor, and learn about your Kafka resources.
 
-This repository and associated Helm charts on are applicable only to the **AWS License Manager** version of Kpow that is [sold on the AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-vgghgqdsplhvc).
+This Helm chart is applicable only to the **AWS License Manager** version of Kpow that is [sold on the AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-vgghgqdsplhvc).
 
 Find our general-purpose Helm charts for regular Kubernetes deploys [right here](https://github.com/operatr-io/kpow-helm-charts).
 
