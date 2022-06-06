@@ -37,7 +37,7 @@ spec:
           {{- with .Values.env }}
             {{- range $key, $val := . }}
             - name: {{ $key }}
-              value: {{ $val }}
+              value: {{ $val | quote }}
             {{- end }}
           {{- end }}
             {{- if $.Values.aws.licenseConfigSecretName }}
