@@ -51,10 +51,10 @@ ingress:
 # Small resource sets (e.g. 1 cluster, 1 schema registry, 1 connect cluster) can likely run with 1 CPU / 2G Memory or less.
 resources:
   limits:
-    cpu: 2
+    cpu: 1
     memory: 4Gi
   requests:
-    cpu: 2
+    cpu: 1
     memory: 4Gi
 
 autoscaling:
