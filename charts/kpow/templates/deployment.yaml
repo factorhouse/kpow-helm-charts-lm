@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "kpow.fullname" . }}
+  namespace: "{{ .Release.Namespace }}"
   labels:
     {{- include "kpow.labels" . | nindent 4 }}
 spec:
@@ -62,22 +63,25 @@ spec:
             - name: http
               containerPort: 3000
               protocol: TCP
-          {{- if $.Values.aws.licenseConfigSecretName }}
           volumeMounts:
+            {{ - with .Values.volumeMounts }}
+            {{ - toYaml . | nindent 12 }}
+            {{ - end } }
+            {{- if $.Values.aws.licenseConfigSecretName }}
             - name: awsmp-product-license
               mountPath: "/var/run/secrets/product-license"
-          {{- end }}
+            {{- end }}
           readinessProbe:
             httpGet:
               path: /up
               port: http
-            initialDelaySeconds: 30
-            periodSeconds: 10
+            initialDelaySeconds: 90
+            periodSeconds: 30
           livenessProbe:
             httpGet:
               path: /healthy
               port: http
-            initialDelaySeconds: 60
+            initialDelaySeconds: 120
             periodSeconds: 30
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
