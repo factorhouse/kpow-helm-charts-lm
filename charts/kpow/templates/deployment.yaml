@@ -64,9 +64,9 @@ spec:
               containerPort: 3000
               protocol: TCP
           volumeMounts:
-            {{ - with .Values.volumeMounts }}
-            {{ - toYaml . | nindent 12 }}
-            {{ - end } }
+            {{- with .Values.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+            {{- end }}
             {{- if $.Values.aws.licenseConfigSecretName }}
             - name: awsmp-product-license
               mountPath: "/var/run/secrets/product-license"
