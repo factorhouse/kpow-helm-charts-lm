@@ -6,7 +6,7 @@
 
 This Helm chart is applicable to the **AWS License Manager** version of Kpow [sold on the AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-vgghgqdsplhvc).
 
-Find our general-purpose Helm charts for regular Kubernetes deploys [right here](https://github.com/operatr-io/kpow-helm-charts).
+Find our general-purpose Helm charts for regular Kubernetes deploys [right here](https://github.com/factorhouse/kpow-helm-charts).
 
 ## Helm Charts
 
@@ -16,7 +16,7 @@ This repository contains a single Helm chart that uses the Kpow AWS Marketplace 
 
 Follow the instructions provided to you via your AWS Marketplace subscription.
 
-For general purpose configuration instructions see our [general-purpose Helm charts](https://github.com/operatr-io/kpow-helm-charts).
+For general purpose configuration instructions see our [general-purpose Helm charts](https://github.com/factorhouse/kpow-helm-charts).
 
 ### Get Help!
 
