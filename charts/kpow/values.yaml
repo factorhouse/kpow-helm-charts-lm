@@ -24,7 +24,7 @@ volumes: []
 #     name: "my-kpow-config"
 
 serviceAccount:
-  create: false
+  create: true
   annotations: {}
   name: kpow
 
