@@ -20,7 +20,7 @@ For general purpose configuration instructions see our [general-purpose Helm cha
 
 ### Get Help!
 
-If you have any issues or errors, please contact support@operatr.io.
+If you have any issues or errors, please contact support@factorhouse.io.
 
 ### Licensing and Modifications
 
