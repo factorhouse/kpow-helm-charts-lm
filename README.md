@@ -16,6 +16,8 @@ This repository contains a single Helm chart that uses the Kpow AWS Marketplace 
 
 Follow the instructions provided to you via your AWS Marketplace subscription.
 
+For more information on configuring IAM Roles for Service Accounts see our [Kpow AWS-LM Documentation](https://docs.kpow.io/installation/aws-marketplace-lm/).
+
 For general purpose configuration instructions see our [general-purpose Helm charts](https://github.com/operatr-io/kpow-helm-charts).
 
 ### Get Help!
