@@ -1,4 +1,4 @@
-helm install --namespace operatr-io --create-namespace my-kpow ./kpow \
+helm install --create-namespace factorhouse ./kpow \
     --set serviceAccount.create=false \
     --set serviceAccount.name=kpow \
     --set aws.licenseConfigSecretName=awsmp-license-token-secret \
