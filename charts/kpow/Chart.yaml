@@ -2,8 +2,8 @@ apiVersion: v2
 name: kpow
 description: Run kPow for Apache Kafka in Kubernetes
 type: application
-version: 1.0.40
-appVersion: "90.6"
+version: 1.0.41
+appVersion: "91.1"
 keywords:
   - kafka
   - kafka-ui
