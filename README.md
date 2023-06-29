@@ -1,8 +1,8 @@
-## Run kPow for Apache Kafka in Kubernetes with AWS License Manager
+## Run Kpow for Apache Kafka in Kubernetes with AWS License Manager
 
 [Helm](https://helm.sh) is the package manager for Kubernetes.
 
-[kPow](https://kpow.io) is the all-in-one toolkit to manage, monitor, and learn about your Kafka resources.
+[Kpow](https://kpow.io) is the all-in-one toolkit to manage, monitor, and learn about your Kafka resources.
 
 This Helm chart is applicable to the **AWS License Manager** version of Kpow [sold on the AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-vgghgqdsplhvc).
 
