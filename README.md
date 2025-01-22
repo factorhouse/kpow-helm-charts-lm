@@ -6,7 +6,7 @@
 
 This Helm chart is applicable to the **AWS License Manager** version of Kpow [sold on the AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-vgghgqdsplhvc).
 
-Find our general-purpose Helm charts for regular Kubernetes deploys [right here](https://github.com/operatr-io/kpow-helm-charts).
+Find our general-purpose Helm charts for regular Kubernetes deploys [right here](https://github.com/factorhouse/kpow-helm-charts).
 
 ## Helm Charts
 
@@ -18,7 +18,7 @@ Follow the instructions provided to you via your AWS Marketplace subscription.
 
 For more information on configuring IAM Roles for Service Accounts see our [Kpow AWS-LM Documentation](https://docs.kpow.io/installation/aws-marketplace-lm/).
 
-For general purpose configuration instructions see our [general-purpose Helm charts](https://github.com/operatr-io/kpow-helm-charts).
+For general purpose configuration instructions see our [general-purpose Helm charts](https://github.com/factorhouse/kpow-helm-charts).
 
 ### Get Help!
 
