@@ -1,9 +1,9 @@
 apiVersion: v2
-name: kpow
-description: Run Kpow for Apache Kafka in Kubernetes
+name: kpow-annual-chart
+description: Run Kpow Annual from the AWS Marketplace in Kubernetes
 type: application
-version: 1.0.57
-appVersion: "94.4"
+version: 1.0.59
+appVersion: "94.5"
 keywords:
   - kafka
   - kafka-ui
