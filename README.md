@@ -1,3 +1,11 @@
+# ⚠️ Archived Repository
+
+This repository has been archived.
+
+For the up-to-date Helm Chart, see [factorhouse/helm-charts → `charts/kpow-annual`](https://github.com/factorhouse/helm-charts/tree/main/charts/kpow-annual).
+
+---
+
 ## Run Kpow for Apache Kafka in Kubernetes with AWS License Manager
 
 [Helm](https://helm.sh) is the package manager for Kubernetes.
